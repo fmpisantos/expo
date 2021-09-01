@@ -7,10 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
-import java.util.List;
-
 import org.unimodules.core.ModuleRegistry;
 import org.unimodules.core.interfaces.services.EventEmitter;
+
+import java.util.List;
 
 import expo.modules.interfaces.barcodescanner.BarCodeScannerResult;
 import expo.modules.interfaces.barcodescanner.BarCodeScannerSettings;
@@ -114,6 +114,14 @@ public class BarCodeScannerView extends ViewGroup {
     barCode.setReferenceImageWidth(this.getWidth());
 
     barCode.setCornerPoints(cornerPoints);
+  }
+
+  public void setFlash(int flashMode){
+    this.mViewFinder.setFlash(flashMode);
+  }
+
+  public void setAutoFocus(boolean autofocus){
+    this.mViewFinder.setAutoFocus(autofocus);
   }
 
   public void setCameraType(final int type) {

@@ -59,6 +59,16 @@ public class BarCodeScannerViewManager extends ViewManager<BarCodeScannerView> {
     return eventNames;
   }
 
+  @ExpoProp(name = "flashMode")
+  public void setFlashMode(BarCodeScannerView view, int torchMode) {
+    view.setFlash(torchMode);
+  }
+
+  @ExpoProp(name = "autoFocus")
+  public void setAutoFocus(BarCodeScannerView view, boolean autoFocus) {
+    view.setAutoFocus(autoFocus);
+  }
+
   @ExpoProp(name = "type")
   public void setType(BarCodeScannerView view, int type) {
     view.setCameraType(type);

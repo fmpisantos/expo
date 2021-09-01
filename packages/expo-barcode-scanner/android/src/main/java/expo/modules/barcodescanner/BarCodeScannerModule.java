@@ -75,12 +75,30 @@ public class BarCodeScannerModule extends ExportedModule {
       {
         put("BarCodeType", getBarCodeConstants());
         put("Type", getTypeConstants());
+        put("FlashMode", getFlashModeConstants());
+        put("AutoFocus", getAutoFocusConstants());
       }
-
+      private Map<String, Object> getAutoFocusConstants() {
+        return Collections.unmodifiableMap(new HashMap<String, Object>() {
+          {
+            put("on", true);
+            put("off", false);
+          }
+        });
+      }
       private Map<String, Object> getBarCodeConstants() {
         return VALID_BARCODE_TYPES;
       }
-
+      private Map<String, Object> getFlashModeConstants() {
+        return Collections.unmodifiableMap(new HashMap<String, Object>() {
+          {
+            put("off", Constants.FLASH_OFF);
+            put("on", Constants.FLASH_ON);
+            put("auto", Constants.FLASH_AUTO);
+            put("torch", Constants.FLASH_TORCH);
+          }
+        });
+      }
       private Map<String, Object> getTypeConstants() {
         return Collections.unmodifiableMap(new HashMap<String, Object>() {
           {
